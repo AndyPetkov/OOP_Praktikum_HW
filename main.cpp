@@ -12,6 +12,11 @@ int main()
 	bool b = true;
 	do
 	{
+		
+		std::cout << "Type *registration* " << std::endl;
+		std::cout << "Type *challenge* " << std::endl;
+		std::cout << "Type *finish* " << std::endl;
+		std::cout << "Type *profil_info* " << std::endl;
 		std::cin >> input;
 		if (strcmp(input, "registration") == 0)
 		{
@@ -23,10 +28,13 @@ int main()
 		else if (strcmp(input, "challenge") == 0)
 		{
 			char challengerName[20];
+			std::cout << "Type your name" << std::endl;
 			std::cin >> challengerName;
+			
 			if (accounts.UserRegistartion(challengerName))
 			{
 				char challengeName[20];
+				std::cout << "Type challenge name" << std::endl;
 				std::cin >> challengeName;
 				Challenge challengeInput;
 				challengeInput.setChallenger(challengerName);
@@ -51,7 +59,12 @@ int main()
 			char challengeName[20];
 			char userName[20];
 			float rating;
-			std::cin >> challengeName >> userName >> rating;
+			std::cout << "Type challenge name" << std::endl;
+			std::cin >> challengeName;
+			std::cout << "Type user name" << std::endl;
+			std::cin >> userName;
+			std::cout << "Type user name" << std::endl;
+			std::cin >> rating;
 			if (accounts.UserRegistartion(userName))
 			{
 				accounts.User_Challenge_remove(userName, challengeName);
@@ -63,6 +76,7 @@ int main()
 		else if (strcmp(input, "profile_info") == 0)
 		{
 			char userName[20];
+			std::cout << "Type the name you want to see " << std::endl;
 			std::cin >> userName;
 			accounts.print_Info(userName);
 		}
